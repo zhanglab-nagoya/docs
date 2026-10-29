@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'jotelha-docs'
+project = 'ZhangLab Docs'
 copyright = '2025, Johannes L. Hörmann'
 author = 'Johannes L. Hörmann'
 

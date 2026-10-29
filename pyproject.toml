@@ -23,7 +23,7 @@ docs = [
 
 [project.urls]
 Documentation = "https://dserver.readthedocs.io"
-Repository = "https://github.com/jotelha/docs"
+Repository = "https://github.com/zhanglab-nagoya/docs"
 
 [tool.setuptools]
 packages = ["jotelha_docs"]

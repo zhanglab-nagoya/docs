@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A Sphinx-based personal notes/documentation collection (`jotelha-docs`), published to Read the Docs at https://dserver.readthedocs.io. Content is mostly molecular-dynamics workflow notes (GROMACS, LAMMPS, polyply, InterMol) with accompanying input/output sample files, not application code. The only Python package (`jotelha_docs/`) exists solely to give the Sphinx build a version number via `setuptools_scm`.
+A Sphinx-based notes/documentation collection titled **ZhangLab Docs** (repo: `zhanglab-nagoya/docs`), published to Read the Docs at https://dserver.readthedocs.io. Content is mostly molecular-dynamics workflow notes (GROMACS, LAMMPS, polyply, InterMol) with accompanying input/output sample files, not application code. The underlying Python package is still named `jotelha_docs/` (and `jotelha-docs` in `pyproject.toml`'s `[project] name`) — only the Sphinx project/page title and GitHub URL references were updated after the repo moved to the `zhanglab-nagoya` org; the Python package name was left as-is. The package exists solely to give the Sphinx build a version number via `setuptools_scm`.
 
 ## Structure and conventions
 
