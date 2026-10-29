@@ -37,3 +37,7 @@ make spelling                  # spell-check via sphinxcontrib.spelling
 2. Write a `README.md` in it with the actual content.
 3. Add any accompanying sample files.
 4. Run `python docs/distribute_index_rst.py` to generate/refresh `index.rst` stubs across the tree.
+
+## Known environment mismatch: `gmx` vs `gmx_mpi`
+
+`docs/050_pama/050_single_chain_generation/050_conversion/forces/single_point_gmx/README.md` and its `extract_forces.sh` invoke the plain `gmx` binary (`gmx grompp`, `gmx mdrun`, `gmx traj`). On this machine there is no plain `gmx` anywhere — neither the manually installed GROMACS 2026.0 in `~/opt` nor the spack `gromacs` module ship anything but `gmx_mpi`. When actually running that tutorial step here, substitute `gmx_mpi` for `gmx` in both the commands and inside `extract_forces.sh`, or the commands fail with "command not found". This was confirmed by running the full PAMA tutorial pipeline end-to-end (polyply → GROMACS EM/NVT → InterMol conversion → force comparison), which otherwise reproduces the documented results (zero net charge, small GROMACS/LAMMPS energy and force discrepancies). The README/script themselves are left as-is pending a fix.
