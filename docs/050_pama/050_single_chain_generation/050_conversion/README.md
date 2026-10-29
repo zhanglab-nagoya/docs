@@ -47,30 +47,31 @@ Energy group summary
 -----------------------------------------------------------------------
 Not comparable energies: are likely not to be the same
 -----------------------------------------------------------------------
-        coulomb (LR)      1109.16564941        0.00000000    -1109.16564941
-        coulomb (SR)    -27446.34765625        0.00000000    27446.34765625
-       coulomb total     -8418.95153809    32838.19554640    41257.14708449
-          coulomb-14     17918.23046875        0.00000000   -17918.23046875
-            improper      2864.15893555        0.00000000    -2864.15893555
-              proper     15565.72070312    18429.91541200     2864.19470887
-            vdw (LR)      -238.49467468     -238.63159488       -0.13692020
-            vdw (SR)     -3497.00097656        0.00000000     3497.00097656
-           vdw total      2523.95649719     2285.21101136     -238.74548583
-              vdw-14      6259.45214844        0.00000000    -6259.45214844
+        coulomb (LR)       594.69744873        0.00000000     -594.69744873
+        coulomb (SR)    -14189.26660156        0.00000000    14189.26660156
+       coulomb total     -3235.03594971    30488.76741520    33723.80336491
+          coulomb-14     10359.53320312        0.00000000   -10359.53320312
+              proper      7034.53125000     7217.26276480      182.73151480
+            vdw (LR)      -228.22811890     -228.34348197       -0.11536307
+            vdw (SR)     -4338.61279297        0.00000000     4338.61279297
+           vdw total      -628.24984741     -856.70584861     -228.45600120
+              vdw-14      3938.59106445        0.00000000    -3938.59106445
 -----------------------------------------------------------------------
 Comparable energy terms: these should be very close
 -----------------------------------------------------------------------
-               angle     17501.51953125    17501.51970240        0.00017115
-                bond      5284.57617188     5284.58279040        0.00661852
-              bonded     41215.97534180    41216.01790480        0.04256300
-            dihedral     18429.87963867    18429.91541200        0.03577333
-           nonbonded     -5894.99504089    -5892.87865120        2.11638969
-           potential     35320.98046875    35323.13967200        2.15920325
+               angle     11348.41601562    11348.42386560        0.00784998
+                bond      3487.82983398     3487.83377952        0.00394554
+              bonded     21870.77709961    22053.52040992      182.74331031
+            dihedral      7034.53125000     7217.26276480      182.73151480
+           nonbonded     -3863.28579712    -3861.88045072        1.40534640
+           potential     18190.22070312    18191.63995920        1.41925607
 
 ---------------- Total Potential Energy Comparison --------------------
-Input gromacs potential energy:         35320.98046875
-Difference in potential energy from gromacs=>lammps conversion:         2.15920325
+Input gromacs potential energy:         18190.22070312
+Difference in potential energy from gromacs=>lammps conversion:         1.41925607
 =======================================================================
 ```
+
+Note the absence of an `improper` row: earlier versions of the `oplsaaLigParGen` library parametrized each PAMA monomer's own backbone Cα=Cβ bond as a vinyl C=C double bond (an artifact of LigParGen treating each monomer as the free vinyl starting material), which carried spurious planarity impropers. The library now treats the backbone bond as the sp3 single bond it actually is once polymerized, so no impropers remain.
 
 Next, compare per-atom forces with single-point force evaluations found within the `forces` sub folder.
